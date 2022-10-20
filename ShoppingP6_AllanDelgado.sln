@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingP6_AllanDelgado.Android", "ShoppingP6_AllanDelgado\ShoppingP6_AllanDelgado.Android\ShoppingP6_AllanDelgado.Android.csproj", "{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingP6_AllanDelgado", "ShoppingP6_AllanDelgado\ShoppingP6_AllanDelgado\ShoppingP6_AllanDelgado.csproj", "{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62CA4F67-1F06-4B16-905A-F4A0DB4AEE2A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF71B97-73D1-4ACD-B274-B2CE2993E28E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82A668F6-2502-4732-AB01-E84EF522BEA9}
+	EndGlobalSection
+EndGlobal
