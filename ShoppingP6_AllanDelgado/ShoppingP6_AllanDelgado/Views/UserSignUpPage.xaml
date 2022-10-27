@@ -12,10 +12,10 @@
             <Entry x:Name="TxtEmailBackUp" Placeholder="Backup Email" />
             <Entry x:Name="TxtPhone" Placeholder="Phone Number" />
 
-            <Picker x:Name="PckUserRole" Title="Select a User Role" />
+            <Picker x:Name="PckUserRole" Title="Select a User Role" ItemDisplayBinding="{Binding UserRoleDescription}"  />
             <Picker x:Name="PckCountry" Title="Select a Country" />
 
-            <Button x:Name="BtnAdd" Text="ADD" />
+            <Button x:Name="BtnAdd" Text="ADD" Clicked="BtnAdd_Clicked"  />
             <Button x:Name="BtnCancel" Text="CANCEL" Clicked="BtnCancel_Clicked" />
 
         </StackLayout>
