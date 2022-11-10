@@ -86,6 +86,35 @@ namespace ShoppingP6_AllanDelgado.ViewModels
         }
 
 
+        //función de validación de ingreso de usuario al app
+        public async Task<bool> UserAccessValidation(string pEmail, string pUserPassword)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MyUser.Email = pEmail;
+                MyUser.UserPassword = pUserPassword;
+
+                bool R = await MyUser.ValidateLogin();
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+        
+        }
+
+
+
+
 
 
 
