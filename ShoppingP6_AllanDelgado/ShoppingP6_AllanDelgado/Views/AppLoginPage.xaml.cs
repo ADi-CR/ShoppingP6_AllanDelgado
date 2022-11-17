@@ -1,4 +1,5 @@
-﻿using ShoppingP6_AllanDelgado.ViewModels;
+﻿using Acr.UserDialogs;
+using ShoppingP6_AllanDelgado.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,10 +48,24 @@ namespace ShoppingP6_AllanDelgado.Views
             if (TxtUserName.Text != null && !string.IsNullOrEmpty(TxtUserName.Text.Trim()) && 
                 TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()))
             {
-                string u = TxtUserName.Text.Trim();
-                string p = TxtPassword.Text.Trim();
+                try
+                {
+                    UserDialogs.Instance.ShowLoading("Checking User Data...");
+                    await Task.Delay(2000);
 
-                R = await vm.UserAccessValidation(u, p);
+                    string u = TxtUserName.Text.Trim();
+                    string p = TxtPassword.Text.Trim();
+
+                    R = await vm.UserAccessValidation(u, p);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    UserDialogs.Instance.HideLoading();
+                }
             }
             else
             {

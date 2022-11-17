@@ -10,16 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace ShoppingP6_AllanDelgado.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ActionMenuPage : ContentPage
+    public partial class UserManagmentPage : ContentPage
     {
-        public ActionMenuPage()
+        public UserManagmentPage()
         {
             InitializeComponent();
         }
-        
-        private async void BtnUserConfig_Clicked(object sender, EventArgs e)
+
+        private void BtnApply_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new UserManagmentPage());
+
+        }
+
+        private void BtnCancel_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

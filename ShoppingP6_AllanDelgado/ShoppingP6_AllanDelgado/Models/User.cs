@@ -36,7 +36,6 @@ namespace ShoppingP6_AllanDelgado.Models
         //public virtual ICollection<Invoice> Invoices { get; set; }
         //public virtual ICollection<UserStore> UserStores { get; set; }
 
-
         //Función para agregar un usuario en la base de datos
         public async Task<bool> AddUser()
         {

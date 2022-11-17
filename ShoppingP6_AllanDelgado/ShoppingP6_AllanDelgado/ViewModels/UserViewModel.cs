@@ -9,6 +9,7 @@ namespace ShoppingP6_AllanDelgado.ViewModels
     public class UserViewModel : BaseViewModel
     {
         public UserRole MyUserRole { get; set; }
+        Country MyCountry { get; set; }
 
         public User MyUser { get; set; }
 
@@ -16,6 +17,33 @@ namespace ShoppingP6_AllanDelgado.ViewModels
         {
             MyUserRole = new UserRole();
             MyUser = new User();
+            MyCountry = new Country();
+        }
+
+
+        public async Task<List<Country>> GetCountryList()
+        {
+            try
+            {
+                List<Country> list = new List<Country>();
+
+                list = await MyCountry.GetCountries();
+
+                if (list == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return list;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
 
         public async Task<List<UserRole>> GetUserRoleList()
@@ -49,8 +77,8 @@ namespace ShoppingP6_AllanDelgado.ViewModels
                                             string pPassword,
                                             string pBkpEmail,
                                             string pPhoneNumber,
-                                            int pUserRole = 1,
-                                            int pCountry = 1)
+                                            int pUserRole,
+                                            int pCountry)
         {
 
             if (IsBusy) return false;
