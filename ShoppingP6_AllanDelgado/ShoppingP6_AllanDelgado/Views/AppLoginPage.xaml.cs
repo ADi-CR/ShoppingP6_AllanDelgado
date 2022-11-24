@@ -75,10 +75,17 @@ namespace ShoppingP6_AllanDelgado.Views
 
             if (R)
             {
-                //await DisplayAlert(":)", "User OK", "OK");
+                try
+                {
+                    GlobalObjects.GlobalUser = await vm.GetUserData(TxtUserName.Text.Trim());
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "OK");
+                    return;                    
+                }
 
                 await Navigation.PushAsync(new ActionMenuPage());
-                //TODO: mostrar la page de selección de acciones en el sistema
             }
             else
             {

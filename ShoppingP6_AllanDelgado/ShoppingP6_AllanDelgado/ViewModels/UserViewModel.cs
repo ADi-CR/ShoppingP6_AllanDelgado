@@ -13,11 +13,40 @@ namespace ShoppingP6_AllanDelgado.ViewModels
 
         public User MyUser { get; set; }
 
+        public UserDTO MiUsuarioDTO { get; set; }
+
         public UserViewModel()
         {
             MyUserRole = new UserRole();
             MyUser = new User();
             MyCountry = new Country();
+
+            MiUsuarioDTO= new UserDTO();
+        }
+
+        public async Task<UserDTO> GetUserData(string email)
+        {
+            try
+            {
+                UserDTO user = new UserDTO();
+
+                user = await MiUsuarioDTO.GetUserData(email);
+
+                if (user == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return user;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
 
 
@@ -140,7 +169,43 @@ namespace ShoppingP6_AllanDelgado.ViewModels
         
         }
 
+        public async Task<bool> UpdateUser(string pName,
+                                           string pEmail,
+                                           string pPassword,
+                                           string pBkpEmail,
+                                           string pPhoneNumber,
+                                           int pUserRole,
+                                           int pCountry)
+        {
 
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MiUsuarioDTO.Nombre = pName;
+                MiUsuarioDTO.CorreoElectronico = pEmail;
+                MiUsuarioDTO.CorreoRespaldo = pBkpEmail;
+                MiUsuarioDTO.NumeroTelefono = pPhoneNumber;
+                MiUsuarioDTO.Contrasennia = pPassword;
+                MiUsuarioDTO.IDRol = pUserRole;
+                MiUsuarioDTO.IDPais = pCountry;
+
+                bool R = await MiUsuarioDTO.UpdateUser();
+
+                return R;
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
 
 
 
