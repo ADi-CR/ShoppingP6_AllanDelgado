@@ -16,10 +16,19 @@ namespace ShoppingP6_AllanDelgado.Views
         {
             InitializeComponent();
         }
-        
+
         private async void BtnUserConfig_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserManagmentPage());
         }
+
+        private async void BtnItemManagment_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new InventoryListPage());
+        }
+
+
+
+
     }
 }

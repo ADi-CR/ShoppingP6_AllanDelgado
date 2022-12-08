@@ -52,8 +52,17 @@ namespace ShoppingP6_AllanDelgado.Models
                 request.AddHeader(Services.CnnToP6API.ApiKeyName, Services.CnnToP6API.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
 
+                //Con esto lo que logramos es quitar del json que se envía al API
+                //todos los campos que tengan null en sus datos
+                //con esto logramos que las complicaciones como los navigation 
+                //se eliminen del json y a nivel del API no pida como requisito el 
+                //el dato o navegation 
+
+                var settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+                                
                 //tenemos que serializar la clase para poderla enviar al API
-                string SerialClass = JsonConvert.SerializeObject(this);
+                string SerialClass = JsonConvert.SerializeObject(this, settings);
 
                 request.AddBody(SerialClass, mimetype);
 
